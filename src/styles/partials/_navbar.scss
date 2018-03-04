@@ -1,0 +1,11 @@
+.navbar-wrapper {
+  .navlink {
+    cursor: pointer;
+    &:hover {
+      color: $primary-color;
+    }
+    &.active {
+      color:$primary-color;
+    }
+  }
+}

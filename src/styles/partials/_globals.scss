@@ -1,0 +1,47 @@
+/* -------------------------------------
+    GLOBAL RESETS
+------------------------------------- */
+* {
+  padding:0;
+  margin:0;
+  font-family: 'Bree Serif', serif;
+  box-sizing: border-box;
+}
+
+table,
+td,
+div,
+a {
+  box-sizing: border-box;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Bree Serif', serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 28px;
+  height: 100% !important;
+  line-height: 1.6em;
+  margin: 0;
+  padding: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  width: 100% !important;
+}
+
+ul {
+  list-style-type: none;
+}
+.float-right,
+.float-right li
+{
+  float:right;
+}
+.float-left{
+  float:left;
+}
+
