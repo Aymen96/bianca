@@ -9,16 +9,15 @@ $(document).ready(function() {
         // COLORATION
         if($(this).hasClass("active")) {
             // COLORATION
-            $(this).removeClass("active");
+            $(this).removeClass("active").parent(".theme-div").removeClass("active");
             // HIDING SLICK_THEME
-
             $(this).siblings(".slick-wrapper").hide();
 
             return;
         }
         // COLORATION
-        $(".theme-title").removeClass("active");
-        $(this).addClass("active");
+        $(".theme-title").removeClass("active").parent(".theme-div").removeClass("active");;
+        $(this).addClass("active").parent(".theme-div").addClass("active");
         // SHOWING SLICK_THEME
         try {
             $(this).siblings(".slick-wrapper").show().children(".theme-slick").slick({

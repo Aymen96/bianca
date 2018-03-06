@@ -1,37 +1,37 @@
-.player {
+// **** PLAYER STYLES *** //
 
-  width:750px;
+.player {
+  width:$player-width;
   .player-bar {
-    width:750px;
     position:relative;
     .bar {
-      height:4px;
-
-      border-radius: 12px;
+      height:$playerbar-height;
+      border-radius: $br;
     }
     .bar-full {
-      background-color: #EEE;
+      background-color: $playerbar-bg-color;
       width:100%;
     }
     .bar-progress {
       background-color: $primary-color;
-      width:40%;
+      width:20%;
       position: absolute;
       top:0;
     }
   }
 
   .player-icons {
-    padding:0px 5px 5px 30px;
+    margin-left:30px;
+    font-size: $icon-font-size;
     i {
-      color:#444;
+      color: $icon-color;
       cursor:pointer;
-      margin: 0 6px;
-      font-size: .8em;
+      margin: 0 3px;
     }
     i strong {
       float:right;
-      font-size: .75em;
+      font-size: $player-time-size;
+      margin-right:$margin-right-player-time;
     }
 
   }
