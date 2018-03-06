@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Aymen96/bianca#readme",
   "devDependencies": {
+    "bootstrap": "^4.0.0",
     "browser-sync": "^2.23.6",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
@@ -24,9 +25,13 @@
     "gulp-connect-php": "^1.0.3",
     "gulp-cssnano": "^2.1.2",
     "gulp-imagemin": "^4.1.0",
+    "gulp-livereload": "^3.8.1",
     "gulp-notify": "^3.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^3.0.0",
-    "gulp-serve": "^1.4.0"
-  }
+    "gulp-serve": "^1.4.0",
+    "jquery": "^3.3.1",
+    "require.js": "^1.0.0"
+  },
+  "dependencies": {}
 }

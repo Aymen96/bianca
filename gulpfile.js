@@ -7,10 +7,11 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     rename = require('gulp-rename'),
     cssnano = require('gulp-cssnano'),
+    livereload = require('gulp-livereload'),
     del = require('del');
 
 gulp.task('default', ['clean'], function() {
-	gulp.start('styles', 'scripts', 'images', 'copy', 'serve'); 
+	gulp.start('styles', 'scripts', 'images', 'copy', 'copy-includes', 'serve', 'watch');
 });
 
 gulp.task('styles', function() {
@@ -38,11 +39,24 @@ gulp.task('copy', function () {
         .pipe(gulp.dest('./dist/assets/'));
 });
 
+gulp.task('copy-includes', function() {
+	return gulp.src(['src/**/*.js', 'src/**/*.css'])
+		.pipe(gulp.dest('./dist/assets/'));
+})
+
+
+//gulp.task('copy', function () {
+//    return gulp.src('src/fonts/**/*')
+//        .pipe(gulp.dest('./dist/assets/fonts'));
+//});
+
 gulp.task('watch', function() {
+	livereload.listen();
   gulp.watch('src/styles/**/*.scss', ['styles']);
   gulp.watch('src/scripts/**/*.js', ['scripts']);
   gulp.watch('src/images/**/*.png', ['images']);
   gulp.watch('src/index.html', ['copy']);
+
 });
 
 gulp.task('clean', function() {

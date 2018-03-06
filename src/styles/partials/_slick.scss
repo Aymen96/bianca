@@ -1,0 +1,28 @@
+.theme-slick {
+  margin: 0 auto;
+  width:70%;
+  figure {
+    font-size: .6em;
+    line-height: .5cm;
+    width:90%;
+    margin:0 auto;
+    position:relative;
+    img {
+    }
+    figcaption {
+      position:absolute;
+      z-index:999;
+      bottom:0;
+      box-sizing: border-box;
+      padding:16px 4px 6px;
+      background-color: #555;
+      color:#fff;
+      opacity: .8;
+    }
+  }
+  .slick-prev:before, .slick-next:before {
+    color:#aaa !important;
+  }
+
+
+}

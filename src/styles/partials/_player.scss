@@ -1,0 +1,34 @@
+.player {
+
+
+  .player-bar {
+    width:750px;
+    position:relative;
+    .bar {
+      height:4px;
+
+      border-radius: 12px;
+    }
+    .bar-full {
+      background-color: #EEE;
+      width:100%;
+    }
+    .bar-progress {
+      background-color: $primary-color;
+      width:40%;
+      position: absolute;
+      top:0;
+    }
+  }
+
+  .player-icons {
+    padding:0px 5px 5px 30px;
+    i {
+      color:#444;
+      cursor:pointer;
+      margin: 0 6px;
+      font-size: .8em;
+    }
+
+  }
+}

@@ -16,6 +16,13 @@
   position: relative;
   .theme-title {
     width:580px;
+    margin-bottom: 25px;
+    color: #000;
+    cursor: pointer;
+    &:hover, &.active {
+      color: $primary-color;
+    }
+
   }
 }
 
@@ -30,6 +37,7 @@
   right:20px;
   top:10px;
   width:500px;
+  display:none;
   span {
     font-size: .8em;
     line-height: .6cm;
@@ -39,6 +47,11 @@
     display: inline-block;
   }
 }
+
+.theme-title:hover + .persons-hover-div {
+  display:inline-block;
+}
+
 
 /*
  *  STYLE 1
