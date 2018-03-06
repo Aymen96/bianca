@@ -2,8 +2,9 @@
   padding-bottom: 10px;
   background-color: #fff;
   z-index:999;
+  height:8vh;
   .header-content {
-    height:70px;
+    height:6vh;
     box-shadow: 0 12px 2px -2px $primary-color;
   }
   .active {
@@ -21,16 +22,16 @@
 
   position:fixed;
   width:100%;
-  top:-70px;
+  top:-55px;
   @include transition(transform 1.5s);
   z-index:2000;
   @include transform(translateY(0));
   &.active-header {
-    @include transform(translateY(70px));
+    @include transform(translateY(55px));
   }
   &:hover,
   &.header-active{
-    @include transform(translateY(70px));
+    @include transform(translateY(55px));
   }
 }
 
