@@ -48,10 +48,21 @@
   }
 }
 
-.theme-title:hover + .persons-hover-div {
+.theme-title:not(.active):hover + .persons-hover-div {
   display:inline-block;
 }
 
+.names {
+  font-size: .5em;
+  font-weight: 300;
+  span {
+    margin: 0 5px;
+    cursor:pointer;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
 
 /*
  *  STYLE 1

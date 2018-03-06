@@ -402,20 +402,26 @@ var fragen = {
 
 console.log(fragen["f1"]["personen"]);
 
-
-
 $(document).ready(function(){
     for(var i = 1; i < Object.keys(fragen).length ; i++) {
+        frage =fragen["f" + i];
+        personen = frage["personen"];
         $(".content-wrapper").append('<div class="theme-div">' +
 
             // THEME_TITLE
             '<h2 class="theme-title">' +
-            fragen["f" + i]["frage"] +
+            frage["frage"] +
             '</h2>' +
 
             // HOVER-BOX
             '<div class="persons-hover-div">' +
             $(".persons-hover-div.hidden").html() +
+            '</div>' +
+
+            // NAMES
+            '<div class="names fn-' +
+            i +
+            '">' +
             '</div>' +
 
             // PLAYER
@@ -429,6 +435,13 @@ $(document).ready(function(){
             '</div>' +
 
             '</div></div>');
+        names=[];
+        selector= ".fn-" + i;
+        for(var j = 0; j < personen.length; j++) {
+            $(selector).append('<span class="name">' +
+                personen[j]["name"] +
+                '</span>')
+        }
     }
 
 });

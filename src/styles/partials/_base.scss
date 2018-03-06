@@ -25,7 +25,9 @@
   @include transition(transform 1.5s);
   z-index:2000;
   @include transform(translateY(0));
-
+  &.active-header {
+    @include transform(translateY(70px));
+  }
   &:hover,
   &.header-active{
     @include transform(translateY(70px));
