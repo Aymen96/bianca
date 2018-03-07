@@ -1,13 +1,13 @@
 // **** HEADER STYLES *** //
 
 .header {
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   background-color: #fff;
   z-index:999;
   height:8vh;
   position:fixed;
   width:100%;
-  top:-55px;
+  top:-60px;
   .header-content {
     height:6vh;
     box-shadow: 0 12px 2px -2px $primary-color;
@@ -27,7 +27,7 @@
   @include transition(transform 1.5s);
   z-index:2000;
   @include transform(translateY(0));
-  &.active-header {
+  &.header-active {
     @include transform(translateY(55px));
   }
   &:hover,

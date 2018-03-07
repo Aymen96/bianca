@@ -1,11 +1,11 @@
 .navbar-wrapper {
-  margin-top:$top-distance;
-  padding:0;
   .navlink {
     cursor: pointer;
     width:200px;
-    line-height: .5cm;
-    margin: 0 0 25px;
+    line-height: .65cm;
+    &:last-child {
+      line-height: .7cm;
+    }
     &:hover {
       color: $primary-color;
     }

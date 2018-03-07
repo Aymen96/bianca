@@ -406,6 +406,7 @@ $(document).ready(function(){
     for(var i = 1; i < Object.keys(fragen).length ; i++) {
         frage =fragen["f" + i];
         personen = frage["personen"];
+        myclass = i%2 == 0 ? "inversed" : "normal";
         $(".content-wrapper").append('<div class="theme-div">' +
 
             // THEME_TITLE
@@ -415,8 +416,13 @@ $(document).ready(function(){
 
             // HOVER-BOX
             '<div class="persons-hover-div">' +
-            $(".persons-hover-div.hidden").html() +
-            '</div>' +
+            '<img alt="" ' +
+            'src="img/avatar.png">' +
+            '<span class="' +
+            myclass +
+            '">' +
+            'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
+            '</span></div>' +
 
             // NAMES
             '<div class="names fn-' +

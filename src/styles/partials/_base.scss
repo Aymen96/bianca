@@ -2,16 +2,35 @@
 
 .wrapper {
   margin:0 $margin-lr-wrapper;
+  margin-top: $top-distance-on-header-off;
+  @include transition(margin 1.5s);
+}
 
+.header:not(.header-active) + .wrapper {
+  margin-top: 4vh;
+  .content-wrapper {
+    height:$content-wrapper-height-on-header-off;
+  }
+}
+
+.header.header-active + .wrapper,
+.header:hover + .wrapper {
+  margin-top: $top-distance;
+  .content-wrapper {
+    height:$content-wrapper-height;
+  }
 }
 
 .content-wrapper {
-  width:81%;
+  width:$content-wrapper-width;
+  overflow-y:scroll;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .navbar-wrapper {
-  width:18%;
-  font-size: .75em;
+  width:$navbar-wrapper-width;
+  font-size: $font-size-medium;
 }
 
 .navbar-wrapper,
