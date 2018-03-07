@@ -403,7 +403,7 @@ var fragen = {
 console.log(fragen["f1"]["personen"]);
 
 $(document).ready(function(){
-    for(var i = 1; i < Object.keys(fragen).length ; i++) {
+    for(var i = 1; i <= Object.keys(fragen).length ; i++) {
         frage =fragen["f" + i];
         personen = frage["personen"];
         myclass = i%2 == 0 ? "inversed" : "normal";
