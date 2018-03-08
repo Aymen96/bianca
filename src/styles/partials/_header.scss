@@ -3,14 +3,17 @@
 .header {
   padding-bottom: 0px;
   background-color: #fff;
+  font-size: $font-size-all;
+
   z-index:999;
   height:8vh;
   position:fixed;
   width:100%;
-  top:-60px;
+  top:-55px;
   .header-content {
+    border-bottom: 1px solid #000;
     height:6vh;
-    box-shadow: 0 12px 2px -2px $primary-color;
+    box-shadow: 0 0 1.5rem $primary-color;
   }
   .active-header-item {
     color: $primary-color;

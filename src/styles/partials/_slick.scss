@@ -1,21 +1,22 @@
 .theme-slick {
-  margin: 0 auto;
-  width:70%;
+  margin-left:25px;
+  width:725px;
   overflow-y: initial;
   figure {
-    font-size: .6em;
+    font-size: 16px;
     line-height: .5cm;
-    width:90%;
+    width:95%;
     margin:0 auto;
     position:relative;
     img {
+
     }
     figcaption {
       position:absolute;
       z-index:999;
       bottom:0;
       box-sizing: border-box;
-      padding:16px 4px 6px;
+      padding:6px 4px 6px;
       background-color: #555;
       color:#fff;
       opacity: .8;

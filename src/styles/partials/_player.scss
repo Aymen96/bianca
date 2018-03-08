@@ -21,18 +21,43 @@
   }
 
   .player-icons {
-    margin-left:30px;
     font-size: $icon-font-size;
+    display: table;
+    position:relative;
     i {
       color: $icon-color;
       cursor:pointer;
-      margin: 0 3px;
+      padding:0 20px 0 0;
+      display:table-cell;
     }
-    i strong {
-      float:right;
-      font-size: $player-time-size;
-      margin-right:$margin-right-player-time;
-      padding: 0 10px;
+    i.volume-bar {
+
+      &:hover div.progress{
+        background-color: $primary-color;
+
+      }
+      width:100px;
+      position:absolute;
+      top:20px;
+      right:-85px;
+      .t {
+        position:relative;
+      }
+      div.bar {
+        height:4px;
+        background-color: $playerbar-bg-color;
+        border-radius: $br;
+        cursor:pointer;
+      }
+      div.progress {
+        position:absolute;
+        top:0;
+        height:4px;
+        background-color: #000;
+        border-radius: $br;
+        width:60%;
+        cursor:pointer;
+      }
     }
 
   }

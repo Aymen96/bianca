@@ -424,6 +424,11 @@ $(document).ready(function(){
             'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
             '</span></div>' +
 
+            //THEME SLICK
+            '<div class="slick-wrapper hidden"><div class="theme-slick">' +
+            $(".theme-slick.hidden").html() +
+            '</div></div>' +
+
             // NAMES
             '<div class="names fn-' +
             i +
@@ -435,12 +440,7 @@ $(document).ready(function(){
             $(".player.hidden").html() +
             '</div>' +
 
-            //THEME SLICK
-            '<div class="slick-wrapper hidden"><div class="theme-slick">' +
-            $(".theme-slick.hidden").html() +
-            '</div>' +
-
-            '</div></div>');
+            '</div>');
         names=[];
         selector= ".fn-" + i;
         for(var j = 0; j < personen.length; j++) {

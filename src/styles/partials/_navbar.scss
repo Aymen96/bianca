@@ -2,6 +2,8 @@
   .navlink {
     cursor: pointer;
     width:200px;
+    font-size: $font-size-all;
+    font-family: $font-family-young-serif;
     line-height: .65cm;
     &:last-child {
       line-height: .7cm;
