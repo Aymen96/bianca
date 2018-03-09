@@ -36,7 +36,7 @@ gulp.task('images', function() {
 
 gulp.task('copy', function () {
     return gulp.src('src/index.html')
-        .pipe(gulp.dest('./dist/assets/'));
+        .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('copy-includes', function() {
@@ -69,7 +69,7 @@ gulp.task('clean', function() {
 gulp.task('serve', function() {
   connect.server({}, function (){
     browserSync({
-      proxy: 'localhost/bianca/dist/assets'
+      proxy: 'localhost/bianca/dist'
     });
   });
  

@@ -2,6 +2,7 @@
   width:100%;
   border-radius: 4px;
   position: relative;
+  overflow: visible;
 
   &:not(.active) {
     margin-bottom:$margin-btm-theme;
@@ -33,8 +34,8 @@
 
 .persons-hover-div {
   position: absolute;
-  right:100px;
-  bottom:30px;
+  right:30px;
+  top:0;
   display:none;
   span {
     font-size: $font-size-all;
@@ -43,7 +44,7 @@
     vertical-align: middle;
     display: inline-block;
     position: relative;
-    top: 50%;
+    top: 40%;
     transform: translateY(50%);
 
     &.inversed {
@@ -56,11 +57,12 @@
     }
   }
   img {
-    width:250px;
+    width:200px;
     margin:0;
     border-radius: 2px;
   }
 }
+
 // SHOW HOVER_BOX ON TITLE HOVER
 .theme-title:not(.active):hover + .persons-hover-div {
   display:inline-block;

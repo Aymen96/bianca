@@ -1,16 +1,13 @@
 .theme-slick {
   margin-left:25px;
-  width:725px;
+  width:750px;
   overflow-y: initial;
   figure {
     font-size: 16px;
     line-height: .5cm;
-    width:95%;
-    margin:0 auto;
+    width:100%;
+    margin:0 5px;
     position:relative;
-    img {
-
-    }
     figcaption {
       position:absolute;
       z-index:999;
@@ -25,6 +22,15 @@
   .slick-prev:before, .slick-next:before {
     color:#aaa !important;
   }
-
+  .slick-prev:before,
+  .slick-prev {
+    position:absolute;
+    right:-6px;
+  }
+  .slick-next:before,
+  .slick-next {
+    position:absolute;
+    left:376px;
+  }
 
 }

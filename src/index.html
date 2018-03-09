@@ -9,19 +9,19 @@
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/youngserif" type="text/css"/>
 
-    <link rel="stylesheet" href="inc/bootstrap.min.css">
-    <link rel="stylesheet" href="inc/slick.css">
-    <link rel="stylesheet" href="inc/slick-theme.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="assets/inc/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/inc/slick.css">
+    <link rel="stylesheet" href="assets/inc/slick-theme.css">
+    <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="assets/css/main.min.css">
 </head>
 <body>
 
 <header class="header">
     <div class="header-content">
         <ul class="head-div float-left">
-            <li class="active-header-item">Themen</li>
-            <li>Personen</li>
+            <li class="themen active-header-item">Themen</li>
+            <li class="personen">Personen</li>
         </ul>
         <ul class="head-div float-right">
             <li>Info</li>
@@ -32,16 +32,31 @@
 
 <div class="wrapper">
     <div class="navbar-wrapper">
-        <nav>
+        <nav class="themen-navbar">
             <p class="navlink active">Themen</p>
             <p class="navlink">Das Studium</p>
             <p class="navlink">Das Diplom</p>
             <p class="navlink">Der Übergang ins Berufsleben</p>
             <p class="navlink">Im Designeralltag</p>
         </nav>
+        <nav class="personen-navbar hidden">
+            <p class="navlink active">Bea</p>
+            <p class="navlink">Cedric</p>
+            <p class="navlink">chris</p>
+            <p class="navlink">Christian</p>
+            <p class="navlink">Claudia</p>
+            <p class="navlink">Eva</p>
+            <p class="navlink">Jill</p>
+            <p class="navlink">Maren</p>
+            <p class="navlink">Masa</p>
+            <p class="navlink">Oliver</p>
+            <p class="navlink">Piero</p>
+        </nav>
     </div>
     <div class="content-wrapper" id="style-1">
         <!-- HERE COMES THE QUESTIONS -->
+        <div class="themen-wrapper"></div>
+        <div class="personen-wrapper hidden" style="text-align:center;"><h1>Personen</h1></div>
     </div>
 </div>
 
@@ -62,113 +77,18 @@
 </div>
 
 <div class="persons-hover-div hidden">
-    <img alt="" src="img/avatar.png" class="test-image">
+    <img alt="" src="assets/img/avatar.png" class="test-image">
     <span class="normal"> Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht. </span>
 </div>
 
 <div class="theme-slick hidden">
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
-    <div>
-        <figure>
-            <img src="img/avatar.png" class="image-slick">
-            <figcaption>
-                Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.
-            </figcaption>
-        </figure>
-    </div>
+
 
 </div>
 
-<script src="inc/jquery.min.js"></script>
-<script src="inc/bootstrap.min.js"></script>
-<script src="inc/slick.min.js"></script>
-<script src="js/main.min.js"></script>
+<script src="assets/inc/jquery.min.js"></script>
+<script src="assets/inc/bootstrap.min.js"></script>
+<script src="assets/inc/slick.min.js"></script>
+<script src="assets/js/main.min.js"></script>
 </body>
 </html>
