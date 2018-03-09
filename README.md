@@ -2,8 +2,10 @@ BIANCA PROJECT
 ***********
 Website has been tested in: 
 
-Google Chrome
-Mozilla Firefox
-IE 9
+Google Chrome<br />
+
+Mozilla Firefox<br />
+
+IE 9<br />
 
 *********** 
