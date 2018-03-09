@@ -461,7 +461,6 @@ $(document).ready(function() {
             myclass +
             '">' +
             'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
-
             '</span>' +
             '</div>' +
 
@@ -496,7 +495,7 @@ $(document).ready(function() {
     $(".theme-title").click(function() {
         $(".theme-title").siblings(".slick-wrapper").hide();
         $(".theme-title").siblings(".names").hide();
-        $(".theme-title").siblings(".player").hide();
+        $(".theme-title").siblings(".player:not(.player-special)").hide();
         // COLORATION
         if($(this).hasClass("active")) {
             // COLORATION
@@ -527,5 +526,37 @@ $(document).ready(function() {
         $(this).siblings(".names").show();
     });
 
+    $(".themen-wrapper").append('<div class="theme-div special">' +
 
+        // THEME_TITLE
+        '<h2 class="theme-title">' +
+        'Warum habt ihr an der HfG Karlsruhe studiert?' +
+        '</h2>' +
+
+        // HOVER-BOX
+        '<div class="persons-hover-div">' +
+        '<img alt="" ' +
+        'src="' +
+        sliderImages[7] +
+        '">' +
+        '<span class="' +
+        'normal' +
+        '">' +
+        'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
+        '</span>' +
+        '</div>' +
+
+        // NAMES
+        '<div class="names fn-' +
+        i +
+        '">' +
+        '</div>' +
+
+        // PLAYER
+        '<div class="player player-special">' +
+        $(".player.hidden").html() +
+        '</div>' +
+
+        '</div>');
+        $(".player-special .icon-play").removeClass("icon-play").addClass("icon-pause");
 });
