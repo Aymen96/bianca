@@ -26,9 +26,13 @@
       display:inline-block;
       padding:0 20px 0 0;
       cursor: pointer;
+      &:hover {
+        color: $primary-color;
+      }
     }
+
   }
-  @include transition(transform 1.5s);
+  @include transition(transform $effect-speed);
   z-index:2000;
   @include transform(translateY(0));
   &.header-active {

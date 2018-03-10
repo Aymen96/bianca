@@ -3,7 +3,8 @@
 .wrapper {
   margin:0 $margin-lr-wrapper;
   margin-top: $top-distance-on-header-off;
-  @include transition(margin 1.5s);
+  @include transition(margin $effect-speed);
+
 }
 
 .header:not(.header-active) + .wrapper {
@@ -26,6 +27,7 @@
   overflow-y:scroll;
   overflow-x: hidden;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .navbar-wrapper {

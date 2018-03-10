@@ -399,6 +399,656 @@ $(document).ready(function() {
                 }
             ]
         },
+
+        "f9": {
+            "frage": "Welche Bedeutung hat das Diplom beim Einstieg in die Berufswelt?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f10": {
+            "frage": "Welche Städte haben dich angezogen?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f11": {
+            "frage": "Was lief beim Einstieg ins Berufsleben nicht so toll?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f12": {
+            "frage": "Welche Erfahungen hast du mit der Selbstständigkeit gemacht?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f13": {
+            "frage": "Wie starte ich die Selbstständigkeit?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f14": {
+            "frage": "Welche Erfahrungen hast du in der Lehrtätigkeit gesammelt?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f15": {
+            "frage": "Wie stellst du dir deine berufliche Zukunft vor?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f16": {
+            "frage": "Leben und Arbeiten: Wie schaffst du die Balance?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f17": {
+            "frage": "Wie wichtig ist eine Spezialisierung als Designer?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f18": {
+            "frage": "Wer zweifelt und kennt Krisen?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f19": {
+            "frage": "Wie beschreibt ihr was ihr tut?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f20": {
+            "frage": "Wie arbeitest du?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        },
+
+        "f21": {
+            "frage": "Was fasziniert euch an eurem Beruf?",
+            "personen": [
+                {
+                    "name": "Cedric",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Piero",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Maren",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Masa",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Christian",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Bea",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Chris",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Claudia",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Eva",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Jill",
+                    "mp3": ".."
+                },
+                {
+                    "name": "Oliver",
+                    "mp3": ".."
+                }
+            ]
+        }
     };
 
     var sliderImages = [
@@ -558,5 +1208,97 @@ $(document).ready(function() {
         '</div>' +
 
         '</div>');
+
         $(".player-special .icon-play").removeClass("icon-play").addClass("icon-pause");
+
+        var personen = [
+            "Bea, 2014",
+            "Cedric, 2011",
+            "Chris, 2014",
+            "Christian, 2016",
+            "Claudia, 2012",
+            "Eva,2009",
+            "Jill,2014",
+            "Maren, 2003",
+            "Masa, 2014",
+            "Oliver, 2009",
+            "Piero, 2010"
+        ];
+        for( var i = 0; i < personen.length; i++) {
+
+            $(".personen-wrapper").append('<h1 class="person-name-headline" id="' +
+                personen[i].split(",")[0].toLowerCase() +
+                '">' +
+                personen[i] +
+                '</h1>')
+                .append('<div class="theme-div">' +
+
+                // THEME_TITLE
+                '<h2 class="theme-title">' +
+                'Warum habt ihr an der HfG Karlsruhe studiert?' +
+                '</h2>' +
+
+                // HOVER-BOX
+                '<div class="persons-hover-div">' +
+                '<img alt="" ' +
+                'src="' +
+                sliderImages[0] +
+                '">' +
+                '<span class="' +
+                'normal' +
+                '">' +
+                'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
+                '</span>' +
+                '</div>' +
+
+                // NAMES
+                '<div class="names hidden fn-' +
+                i +
+                '">' +
+                '</div>' +
+
+                // PLAYER
+                '<div class="player hidden">' +
+                $(".player.hidden").html() +
+                '</div>' +
+
+                '</div>')
+                .append('<div class="theme-div">' +
+
+                // THEME_TITLE
+                '<h2 class="theme-title">' +
+                'Warum habt ihr an der HfG Karlsruhe studiert?' +
+                '</h2>' +
+
+                // HOVER-BOX
+                '<div class="persons-hover-div">' +
+                '<img alt="" ' +
+                'src="' +
+                sliderImages[0] +
+                '">' +
+                '<span class="' +
+                'normal' +
+                '">' +
+                'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
+                '</span>' +
+                '</div>' +
+
+                // NAMES
+                '<div class="names hidden fn-' +
+                i +
+                '">' +
+                '</div>' +
+
+                // PLAYER
+                '<div class="player hidden">' +
+                $(".player.hidden").html() +
+                '</div>' +
+
+                '</div>');
+        }
+
+    $(".personen-navbar a").click(function (){
+        $(".personen-navbar a").removeClass("active");
+        $(this).addClass("active");
+    });
 });

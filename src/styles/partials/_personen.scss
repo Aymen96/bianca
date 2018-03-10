@@ -1,0 +1,26 @@
+.personen-wrapper {
+
+
+}
+.person-name-headline {
+  font-size: 30px;
+  margin-bottom: 50px;
+  cursor:pointer;
+  color: #666;
+  width: 50%;
+}
+
+.person-name-headline + .theme-div {
+    margin-bottom: 25px;
+}
+
+.personen-navbar a {
+  color: $font-color;
+  text-decoration: none;
+  &:hover {
+    color: $primary-color;
+  }
+  &.active {
+    color: $primary-color;
+  }
+}
