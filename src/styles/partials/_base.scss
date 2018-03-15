@@ -5,6 +5,7 @@
   margin-top: $top-distance-on-header-off;
   @include transition(margin $effect-speed);
 
+
 }
 
 .header:not(.header-active) + .wrapper {

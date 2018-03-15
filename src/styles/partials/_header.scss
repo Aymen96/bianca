@@ -4,8 +4,7 @@
   padding-bottom: 0px;
   background-color: #fff;
   font-size: $font-size-all;
-
-  z-index:999;
+  z-index:2000;
   height:80px;
   position:fixed;
   width:100%;
@@ -33,7 +32,7 @@
 
   }
   @include transition(transform $effect-speed);
-  z-index:2000;
+
   @include transform(translateY(0));
   &.header-active {
     @include transform(translateY(70px));

@@ -1,0 +1,114 @@
+@media screen
+and (max-width: $phone-device-max-width),
+screen and (max-height: $phone-device-max-height){
+  header.header {
+    display:none;
+  }
+  .navbar-wrapper {
+    display: none;
+  }
+  .wrapper {
+    margin: 5px;
+  }
+  .content-wrapper {
+    width: 100%;
+  }
+  .persons-hover-div {
+    display:none;
+  }
+  .theme-div {
+
+  }
+  .player {
+    margin:0 20px;
+    width:400px;
+  }
+  .theme-title {
+    width: auto;
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+.small-devices-header {
+  .header-top {
+    background: rgb(0, 47, 77);
+    height: 70px;
+    padding: 0 25px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 12;
+  }
+
+  // TOGGLE ICON
+  .toggle-menu {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    i {
+      position: absolute;
+      display: block;
+      height: 2px;
+      background: white;
+      width: 30px;
+      left: 10px;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      &:nth-child(1) { top: 16px; }
+      &:nth-child(2) { top: 24px; }
+      &:nth-child(3) { top: 32px; }
+    }
+  }
+
+  // CLOSE ICON
+  .open-menu i {
+    &:nth-child(1) {
+      top: 25px;
+      -webkit-transform: rotateZ(45deg);
+      transform: rotateZ(45deg);
+    }
+    &:nth-child(2) {
+      background: transparent;
+    }
+    &:nth-child(3) {
+      top: 25px;
+      -webkit-transform: rotateZ(-45deg);
+      transform: rotateZ(-45deg);
+    }
+  }
+  nav {
+    height: 0;
+    opacity: 0;
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    background: rgba(0, 47, 77, .98);
+    ul {
+      text-align: center;
+    }
+    li {
+      margin: 50px 0;
+      display:block;
+      color: #fff;
+      cursor:pointer;
+    }
+
+  }
+
+  .open-menu ~ nav {
+    opacity: 1;
+    padding: 80px 0;
+    z-index: 15;
+    height: calc(100vh - 70px);
+  }
+
+  nav li.active a,
+  body.fp-viewing-fifthSection-1 #menu li:last-child a {
+    background: #453659;
+  }
+}

@@ -18,14 +18,16 @@ gulp.task('styles', function() {
   return sass('src/styles/main.scss', { style: 'expanded' })
     .pipe(rename({suffix: '.min'}))
     .pipe(cssnano())
-    .pipe(gulp.dest('dist/assets/css'));
+    .pipe(gulp.dest('dist/assets/css'))
+      .pipe(livereload());
 });
 
 gulp.task('scripts', function() {
   return gulp.src('src/scripts/**/*.js')
     .pipe(concat('main.js'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/assets/js'));
+    .pipe(gulp.dest('dist/assets/js'))
+      .pipe(livereload());
 });
 
 gulp.task('images', function() {
@@ -36,12 +38,14 @@ gulp.task('images', function() {
 
 gulp.task('copy', function () {
     return gulp.src('src/index.html')
-        .pipe(gulp.dest('./dist/'));
+        .pipe(gulp.dest('./dist/'))
+      .pipe(livereload());
 });
 
 gulp.task('copy-includes', function() {
 	return gulp.src(['src/**/*.js', 'src/**/*.css'])
-		.pipe(gulp.dest('./dist/assets/'));
+		.pipe(gulp.dest('./dist/assets/'))
+      .pipe(livereload());
 })
 
 
