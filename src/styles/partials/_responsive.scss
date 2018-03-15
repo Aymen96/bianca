@@ -9,6 +9,50 @@ screen and (max-height: $phone-device-max-height){
   }
   .wrapper {
     margin: 5px;
+    margin-top: 85px;
+    overflow-y: visible;
+  }
+  * {
+    overflow-y: visible;
+  }
+  .content-wrapper {
+    width: 100%;
+  }
+  .persons-hover-div {
+    display:none;
+  }
+  .small-devices-header {
+    li {
+      margin:0 !important;
+    }
+  }
+  .player {
+    margin:0 20px;
+    width:350px;
+  }
+  .theme-title {
+    width: auto;
+    font-size: 35px;
+    line-height: 40px;
+  }
+}
+
+@media screen
+and (max-width: $tablet-device-max-width),
+screen and (max-height: $tablet-device-max-height){
+  header.header {
+    display:none;
+  }
+  .navbar-wrapper {
+    display: none;
+  }
+  .wrapper {
+    margin: 5px;
+    margin-top: 85px;
+    overflow-y: visible;
+  }
+  * {
+    overflow-y: visible;
   }
   .content-wrapper {
     width: 100%;
@@ -21,7 +65,7 @@ screen and (max-height: $phone-device-max-height){
   }
   .player {
     margin:0 20px;
-    width:400px;
+    width:350px;
   }
   .theme-title {
     width: auto;
@@ -32,7 +76,7 @@ screen and (max-height: $phone-device-max-height){
 
 .small-devices-header {
   .header-top {
-    background: rgb(0, 47, 77);
+    background: $primary-color;
     height: 70px;
     padding: 0 25px;
     position: fixed;
@@ -87,7 +131,7 @@ screen and (max-height: $phone-device-max-height){
     width: 100%;
     -webkit-transition: all 2s;
     transition: all 2s;
-    background: rgba(0, 47, 77, .98);
+    background: rgba($primary-color, .96);
     ul {
       text-align: center;
     }
