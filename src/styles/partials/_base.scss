@@ -14,14 +14,10 @@
     height:$content-wrapper-height-on-header-off;
   }
 }
-
-.header.header-active + .wrapper,
-.header:hover + .wrapper {
-  margin-top: $top-distance;
-  .content-wrapper {
-    height:$content-wrapper-height;
-  }
+.content-wrapper {
+   height:$content-wrapper-height;
 }
+
 
 .content-wrapper {
   width:$content-wrapper-width;

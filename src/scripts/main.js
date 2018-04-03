@@ -1051,73 +1051,16 @@ $(document).ready(function() {
         }
     };
 
-    var sliderImages = [
-        'assets/img/sliders/01_bea.jpg',
-        'assets/img/sliders/02_cedric.jpg',
-        'assets/img/sliders/03_chris.jpg',
-        'assets/img/sliders/04_christian.jpg',
-        'assets/img/sliders/05_claudia.jpg',
-        'assets/img/sliders/06_eva.jpg',
-        'assets/img/sliders/07_jill.jpg',
-        'assets/img/sliders/08_maren.jpg',
-        'assets/img/sliders/09_masa.jpg',
-        'assets/img/sliders/10_oliver.jpg',
-        'assets/img/sliders/11_piero.jpg'
-    ];
-
-
-    // HEADER ACTIVE TIMEOUT
-    $(".header").addClass("header-active");
-    window.setTimeout(function () {
-        $(".header").removeClass("header-active")
-    } , 8000);
-
-    // THEME-SLICK CONTENT GENERATOR
-    function fill_slicks() {
-        var html = '';
-        for(var i = 0; i < sliderImages.length; i++) {
-            var slick_el = '<figure>' +
-                '<img src="' +
-                sliderImages[i] +
-                '" class="image-slick">' +
-                '<figcaption>' +
-                'Lorem ipsum dolor sit amet, vel ut affert bonorum. Mea posse dicam cu.' +
-                '</figcaption>' +
-                '</figure>';
-            html += slick_el;
-        }
-        return html;
-    }
-
     // QUESTIONS FILL
     for(var i = 1; i <= Object.keys(fragen).length ; i++) {
         frage =fragen["f" + i];
         personen = frage["personen"];
-        myclass = i%2 == 0 ? "inversed" : "normal";
         $(".themen-wrapper").append('<div class="theme-div">' +
 
             // THEME_TITLE
             '<h2 class="theme-title">' +
             frage["frage"] +
             '</h2>' +
-
-            // HOVER-BOX
-            '<div class="persons-hover-div">' +
-             '<img alt="" ' +
-            'src="' +
-            sliderImages[Math.round(Math.random() * 10)] +
-            '">' +
-            '<span class="' +
-            myclass +
-            '">' +
-            'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
-            '</span>' +
-            '</div>' +
-
-            //THEME SLICK
-            '<div class="slick-wrapper hidden"><div class="theme-slick">' +
-            fill_slicks() +
-            '</div></div>' +
 
             // NAMES
             '<div class="names hidden fn-' +
@@ -1150,66 +1093,14 @@ $(document).ready(function() {
         if($(this).hasClass("active")) {
             // COLORATION
             $(this).removeClass("active").parent(".theme-div").removeClass("active");
-            // HIDING SLICK_THEME
-            $(this).siblings(".slick-wrapper").hide();
-            $(this).siblings(".names").hide();
-            $(this).siblings(".player").hide();
-
             return;
         }
         // COLORATION
         $(".theme-title").removeClass("active").parent(".theme-div").removeClass("active");;
         $(this).addClass("active").parent(".theme-div").addClass("active");
-        // SHOWING SLICK_THEME
-        try {
-            $(this).siblings(".slick-wrapper").show().children(".theme-slick").slick({
-                infinite: true,
-                slidesToShow: 4,
-                slidesToScroll: 4,
-                arrows: true
-            });
-        }
-        catch(err) {
-            // ERROR TO BE IGNORED
-        }
         $(this).siblings(".player").show();
         $(this).siblings(".names").show();
     });
-
-    $(".themen-wrapper").append('<div class="theme-div special">' +
-
-        // THEME_TITLE
-        '<h2 class="theme-title">' +
-        'Warum habt ihr an der HfG Karlsruhe studiert?' +
-        '</h2>' +
-
-        // HOVER-BOX
-        '<div class="persons-hover-div">' +
-        '<img alt="" ' +
-        'src="' +
-        sliderImages[7] +
-        '">' +
-        '<span class="' +
-        'normal' +
-        '">' +
-        'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
-        '</span>' +
-        '</div>' +
-
-        // NAMES
-        '<div class="names fn-' +
-        i +
-        '">' +
-        '</div>' +
-
-        // PLAYER
-        '<div class="player player-special">' +
-        $(".player.hidden").html() +
-        '</div>' +
-
-        '</div>');
-
-        $(".player-special .icon-play").removeClass("icon-play").addClass("icon-pause");
 
         var personen = [
             "Bea, 2014",
@@ -1224,6 +1115,7 @@ $(document).ready(function() {
             "Oliver, 2009",
             "Piero, 2010"
         ];
+
         for( var i = 0; i < personen.length; i++) {
 
             $(".personen-wrapper").append('<h1 class="person-name-headline" id="' +
@@ -1237,19 +1129,6 @@ $(document).ready(function() {
                 '<h2 class="theme-title">' +
                 'Warum habt ihr an der HfG Karlsruhe studiert?' +
                 '</h2>' +
-
-                // HOVER-BOX
-                '<div class="persons-hover-div">' +
-                '<img alt="" ' +
-                'src="' +
-                sliderImages[0] +
-                '">' +
-                '<span class="' +
-                'normal' +
-                '">' +
-                'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
-                '</span>' +
-                '</div>' +
 
                 // NAMES
                 '<div class="names hidden fn-' +
@@ -1270,19 +1149,6 @@ $(document).ready(function() {
                 'Warum habt ihr an der HfG Karlsruhe studiert?' +
                 '</h2>' +
 
-                // HOVER-BOX
-                '<div class="persons-hover-div">' +
-                '<img alt="" ' +
-                'src="' +
-                sliderImages[0] +
-                '">' +
-                '<span class="' +
-                'normal' +
-                '">' +
-                'Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht.' +
-                '</span>' +
-                '</div>' +
-
                 // NAMES
                 '<div class="names hidden fn-' +
                 i +
@@ -1297,8 +1163,5 @@ $(document).ready(function() {
                 '</div>');
         }
 
-    $(".personen-navbar a").click(function (){
-        $(".personen-navbar a").removeClass("active");
-        $(this).addClass("active");
-    });
+
 });

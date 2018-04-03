@@ -17,28 +17,15 @@
 </head>
 <body>
 
-<header class="header">
-    <div class="header-content">
-        <ul class="head-div float-left">
-            <li class="themen active-header-item">Themen</li>
-            <li class="personen">Personen</li>
-        </ul>
-        <ul class="head-div float-right">
-            <li>Info</li>
-            <li>Mitmachen</li>
-        </ul>
-    </div>
-</header>
-
 
 <div class="wrapper">
     <div class="navbar-wrapper">
         <nav class="themen-navbar">
             <p class="navlink active">Themen</p>
-            <p class="navlink">Das Studium</p>
-            <p class="navlink">Das Diplom</p>
-            <p class="navlink">Der Übergang ins Berufsleben</p>
-            <p class="navlink">Im Designeralltag</p>
+            <a href="#studium"><p class="navlink">Das Studium</p></a>
+            <a href="#diplom"><p class="navlink">Das Diplom</p></a>
+            <a href="#uebergang-ins-berufsleben"><p class="navlink">Der Übergang ins Berufsleben</p></a>
+            <a href="#im-designeralltag"><p class="navlink">Im Designeralltag</p></a>
         </nav>
         <nav class="personen-navbar hidden">
             <p class="navlink active">Personen</p>
@@ -57,13 +44,34 @@
     </div>
     <div class="content-wrapper" id="style-1">
         <!-- HERE COMES THE QUESTIONS -->
-        <div class="themen-wrapper">
+        <div id="studium">
+            <h4>Studium</h4>
+            <div class="themen-wrapper"></div>
+            <div class="personen-wrapper hidden"></div>
         </div>
-        <div class="personen-wrapper hidden"></div>
+        <div id="diplom">
+            <h4>Diplom</h4>
+            <div class="themen-wrapper"></div>
+            <div class="personen-wrapper hidden"></div>
+        </div>
+        <div id="uebergang-ins-berufsleben">
+            <h4>Übergang ins Berufsleben</h4>
+            <div class="themen-wrapper"></div>
+            <div class="personen-wrapper hidden"></div>
+        </div>
+        <div id="im-designeralltag">
+            <h4>Im Designeralltag</h4>
+            <div class="themen-wrapper"></div>
+            <div class="personen-wrapper hidden"></div>
+        </div>
+
     </div>
+
 </div>
 
-
+<div class="bottom-band">
+    <marquee direction="left">Aymen</marquee>
+</div>
 
 <!-- ****** HIDDEN ******-->
 <div class="player hidden">
@@ -84,10 +92,6 @@
     <span class="normal"> Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht. </span>
 </div>
 
-<div class="theme-slick hidden">
-
-
-</div>
 
 <script src="assets/inc/jquery.min.js"></script>
 <script src="assets/inc/bootstrap.min.js"></script>

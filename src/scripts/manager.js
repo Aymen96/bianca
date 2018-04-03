@@ -1,19 +1,4 @@
 $(document).ready(function() {
-    var content = "themen";
-
-    $("li.themen").click(function () {
-        content = 'themen';
-        $(".active-header-item").removeClass("active-header-item");
-        $(this).addClass("active-header-item");
-        switchToThemen();
-    });
-
-    $("li.personen").click(function () {
-        content = 'personen';
-        $(".active-header-item").removeClass("active-header-item");
-        $(this).addClass("active-header-item");
-        switchToPersonen();
-    });
 
     function switchToThemen () {
         if(content = "themen") {
@@ -33,4 +18,8 @@ $(document).ready(function() {
         }
     }
 
+    $(".personen-navbar a").click(function (){
+        $(".personen-navbar a").removeClass("active");
+        $(this).addClass("active");
+    });
 });
