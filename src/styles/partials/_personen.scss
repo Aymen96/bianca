@@ -9,14 +9,3 @@
 .person-name-headline + .theme-div {
     margin-bottom: 25px;
 }
-
-.personen-navbar a {
-  color: $font-color;
-  text-decoration: none;
-  &:hover {
-    color: $primary-color;
-  }
-  &.active {
-    color: $primary-color;
-  }
-}

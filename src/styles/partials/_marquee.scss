@@ -1,0 +1,46 @@
+$main-width: 1200px;
+.marquee {
+  display:block;
+  position:relative;
+  width:1900px;
+  overflow: hidden;
+  .mq1 {
+    display:inline-block;
+    width:$main-width;
+  }
+  .mq2 {
+    display:inline-block;
+    position:absolute;
+    left: $main-width;
+    width:900px;
+    text-align: left;
+  }
+}
+
+.theme-div {
+  overflow:hidden;
+  position:relative;
+  width:$main-width;
+  &:hover .marquee {
+    animation: scroll_one_time 4s linear 1,
+    scroll 2s linear 4s 1;
+  }
+}
+
+/* Make it move */
+@keyframes scroll_one_time{
+  0% {left:0;}
+
+  100% {left:-1900px;}
+  //100% {left:-950px;}
+}
+@keyframes scroll{
+  //0% {left:950px;}
+  0% {left:1225px;}
+  100% {left:0px;}
+}
+
+.theme-image {
+
+  padding: 0 10px;
+}

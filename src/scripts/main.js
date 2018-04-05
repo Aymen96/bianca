@@ -1051,28 +1051,161 @@ $(document).ready(function() {
         }
     };
 
+    var persons = [
+            {
+                "name": "Bea",
+                "year": "2014"
+            },
+            {
+                "name": "Cedric",
+                "year": "2011"
+            },
+            {
+                "name": "Chris",
+                "year": "2014"
+            },
+            {
+                "name": "Christian",
+                "year": "2016"
+            },
+            {
+                "name": "Claudia",
+                "year": "2012"
+            },
+            {
+                "name": "Eva",
+                "year": "2009"
+            },
+            {
+                "name": "Jill",
+                "year": "2014"
+            },
+            {
+                "name": "Maren",
+                "year": "2003"
+            },
+            {
+                "name": "Masa",
+                "year": "2014"
+            },
+            {
+                "name": "Oliver",
+                "year": "2009"
+            },
+            {
+                "name": "Piero",
+                "year": "2010"
+            }
+        ];
+    var alphabetisch = true;
+
+    function showNavlinks() {
+        $(".personen-navbar a.navlink:not(.special, .sort-btn)").remove();
+        var str = "";
+        for(var i = 0; i < persons.length; i++) {
+            str += '<a class="navlink ' +
+                '" href="#' + persons[i].name.toLowerCase() + '">' +
+                persons[i].name +
+                ', ' +
+                persons[i].year +
+                '</a>';
+        }
+        $(".personen-navbar .zu-personen").after(str);
+        $(".personen-navbar a.navlink:not(.special, .sort-btn)").first().addClass("active-select");
+        $(".personen-navbar a:not(.special, .sort-btn)").click(function (){
+            $(".personen-navbar a:not(.special, .sort-btn)").removeClass("active-select");
+            $(this).addClass("active-select");
+        });
+    }
+    function showPersons() {
+        $(".personen-wrapper").empty();
+        for( var i = 0; i < persons.length; i++) {
+
+            $(".personen-wrapper").append('<h1 class="person-name-headline" id="' +
+                persons[i].name.toLowerCase() +
+                '">' +
+                persons[i].name + ', ' + persons[i].year +
+                '</h1>')
+                .append('<div class="theme-div">' +
+
+                    // THEME_TITLE
+                    '<h2 class="theme-title">' +
+                    'Warum habt ihr an der HfG Karlsruhe studiert?' +
+                    '</h2>' +
+
+                    // NAMES
+                    '<div class="names hidden fn-' +
+                    i +
+                    '">' +
+                    '</div>' +
+
+                    // PLAYER
+                    '<div class="player hidden">' +
+                    $(".player.hidden").html() +
+                    '</div>' +
+
+                    '</div>')
+                .append('<div class="theme-div">' +
+
+                    // THEME_TITLE
+                    '<h2 class="theme-title">' +
+                    'Warum habt ihr an der HfG Karlsruhe studiert?' +
+                    '</h2>' +
+
+                    // NAMES
+                    '<div class="names hidden fn-' +
+                    i +
+                    '">' +
+                    '</div>' +
+
+                    // PLAYER
+                    '<div class="player hidden">' +
+                    $(".player.hidden").html() +
+                    '</div>' +
+
+                    '</div>');
+        }
+    }
+
+    showNavlinks();
+    showPersons();
+
     // QUESTIONS FILL
     for(var i = 1; i <= Object.keys(fragen).length ; i++) {
         frage =fragen["f" + i];
         personen = frage["personen"];
-        $(".themen-wrapper").append('<div class="theme-div">' +
+        $(".themen-wrapper").append('' +
+            '<div class="theme-div">' +
+                '<div class="marquee">' +
+                '<div class="mq1">' +
 
-            // THEME_TITLE
-            '<h2 class="theme-title">' +
-            frage["frage"] +
-            '</h2>' +
+                // THEME_TITLE
+                '<h2 class="theme-title">' +
+                frage["frage"] +
+                '</h2>' +
 
-            // NAMES
-            '<div class="names hidden fn-' +
-            i +
-            '">' +
-            '</div>' +
 
-            // PLAYER
-            '<div class="player hidden">' +
-            $(".player.hidden").html() +
-            '</div>' +
 
+                // NAMES
+                '<div class="names hidden fn-' +
+                i +
+                '">' +
+                '</div>' +
+
+                // PLAYER
+                '<div class="player hidden">' +
+                $(".player.hidden").html() +
+                '</div>' +
+                '</div>'  +
+
+                '<div class="mq2">' +
+                    '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
+                    '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
+                    '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
+                '</div>' +
+
+
+                '</div>' +
             '</div>');
 
         names=[];
@@ -1084,9 +1217,7 @@ $(document).ready(function() {
         }
     }
 
-    // THEME TIME FUNCTION
     $(".theme-title").click(function() {
-        $(".theme-title").siblings(".slick-wrapper").hide();
         $(".theme-title").siblings(".names").hide();
         $(".theme-title").siblings(".player:not(.player-special)").hide();
         // COLORATION
@@ -1101,67 +1232,31 @@ $(document).ready(function() {
         $(this).siblings(".player").show();
         $(this).siblings(".names").show();
     });
-
-        var personen = [
-            "Bea, 2014",
-            "Cedric, 2011",
-            "Chris, 2014",
-            "Christian, 2016",
-            "Claudia, 2012",
-            "Eva,2009",
-            "Jill,2014",
-            "Maren, 2003",
-            "Masa, 2014",
-            "Oliver, 2009",
-            "Piero, 2010"
-        ];
-
-        for( var i = 0; i < personen.length; i++) {
-
-            $(".personen-wrapper").append('<h1 class="person-name-headline" id="' +
-                personen[i].split(",")[0].toLowerCase() +
-                '">' +
-                personen[i] +
-                '</h1>')
-                .append('<div class="theme-div">' +
-
-                // THEME_TITLE
-                '<h2 class="theme-title">' +
-                'Warum habt ihr an der HfG Karlsruhe studiert?' +
-                '</h2>' +
-
-                // NAMES
-                '<div class="names hidden fn-' +
-                i +
-                '">' +
-                '</div>' +
-
-                // PLAYER
-                '<div class="player hidden">' +
-                $(".player.hidden").html() +
-                '</div>' +
-
-                '</div>')
-                .append('<div class="theme-div">' +
-
-                // THEME_TITLE
-                '<h2 class="theme-title">' +
-                'Warum habt ihr an der HfG Karlsruhe studiert?' +
-                '</h2>' +
-
-                // NAMES
-                '<div class="names hidden fn-' +
-                i +
-                '">' +
-                '</div>' +
-
-                // PLAYER
-                '<div class="player hidden">' +
-                $(".player.hidden").html() +
-                '</div>' +
-
-                '</div>');
+    $(".sort-btn").click(function() {
+        if(alphabetisch) {
+            alphabetisch = false;
+            persons.sort(function (a, b) {
+                if(a.year > b.year) return 1;
+                else if(a.year < b.year) return -1;
+                else return 0;
+            });
+            showNavlinks();
+            showPersons();
+            console.log(persons);
+        } else {
+            alphabetisch = true;
+            persons.sort(function (a, b) {
+                if(a.name > b.name) return 1;
+                else if(a.name < b.name) return -1;
+                else return 0;
+            });
+            showNavlinks();
+            showPersons();
+            console.log(persons);
         }
+    });
+
+
 
 
 });
