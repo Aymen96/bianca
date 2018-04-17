@@ -5,20 +5,29 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bianca Jankowski</title>
-    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <title>Mal schauen, was kommt.</title>
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Open+Sans" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/inc/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/inc/slick.css">
     <link rel="stylesheet" href="assets/inc/slick-theme.css">
     <link rel="stylesheet" href="assets/fonts/icomoon/style.css">
     <link rel="stylesheet" href="assets/css/main.min.css">
+
 </head>
 <body>
+
+<!-- Bubble Animation -->
+<div class="wrap">
+    <canvas id="bubble" class=""></canvas>
+</div>
+
+<!-- Info Button -->
 <div class="hide-info-btn hidden"></div>
 <div class="icon-info info-btn">i</div>
+
+<!-- Bottom Band -->
 <div class="bottom-band">
-    <marquee class="marquee-custom" direction="left" scrollamount="15"><span>Mal schauen, was kommt.</span> <span>Wie Absolventen über ihren Werdegang erzählen.</span></marquee>
+    <marquee class="marquee-custom" direction="left" scrollamount="14"><span>Mal schauen, was kommt.</span> <span>Wie Absolventen über ihren Werdegang erzählen.</span></marquee>
     <div class="info-box ">
         <div class="info-box-content">
             <div class="info-wrapper">
@@ -56,79 +65,120 @@
 
 <div class="wrapper">
     <div class="navbar-wrapper ">
-        <nav class="themen-navbar navbar">
-            <a class="navlink special active zu-themen">Interviews im <br>Themen-Katalog</a>
-            <a class="navlink special zu-personen">Interviews im <br>Personen-Katalog</a>
-            <a class="navlink active-select" href="#studium">Das Studium</a>
-            <a class="navlink " href="#diplom">Das Diplom</a>
-            <a class="navlink" href="#uebergang-ins-berufsleben">Der Übergang ins<br> Berufsleben</a>
-            <a class="navlink" href="#im-designeralltag">Im Designeralltag</a>
+        <!-- THEMEN NAVBAR -->
+        <nav id="list-example" class="themen-navbar navbar" id="spy">
+            <a class="special active zu-themen">Interviews <br>nach Themen</a>
+            <a class="special zu-personen">Interviews <br>nach Personen</a>
+            <a class="active-select" href="#studium">Das Studium</a>
+            <a href="#diplom">Das Diplom</a>
+            <a href="#uebergang-ins-berufsleben">Der Übergang ins<br> Berufsleben</a>
+            <a href="#im-designeralltag">Im Designeralltag</a>
         </nav>
+        <!-- PERSONEN NAVBAR -->
         <nav class="personen-navbar navbar hidden">
-            <a class="navlink special active zu-themen">Interviews im <br>Themen-Katalog</a>
-            <a class="navlink special zu-personen">Interviews im <br>Personen-Katalog</a>
+            <a class="navlink special active zu-themen">Interviews <br>nach Themen</a>
+            <a class="navlink special zu-personen">Interviews <br>nach Personen</a>
 
+            <a class="active-select" href="#bea">Bea, 2014</a>
+            <a class=" " href="#cedric">Cedric, 2011</a>
+            <a class=" " href="#chris">Chris, 2014</a>
+            <a class=" " href="#christian">Christian, 2016</a>
+            <a class=" " href="#claudia">Claudia, 2012</a>
+            <a class=" " href="#eva">Eva, 2009</a>
+            <a class=" " href="#jill">Jill, 2014</a>
+            <a class=" " href="#maren">Maren, 2003</a>
+            <a class=" " href="#masa">Masa, 2014</a>
+            <a class=" " href="#oliver">Oliver, 2009</a>
+            <a class=" " href="#piero">Piero, 2010</a>
             <a class="nav-link sort-btn">alphabetisch / nach Abschlussjahr sortieren</a>
         </nav>
     </div>
-    <div class="content-wrapper" id="style-1">
-        <!-- HERE COMES THE QUESTIONS -->
-        <div id="studium">
 
+    <!-- HERE COME THE QUESTIONS -->
+    <div class="content-wrapper scrollspy-example" id="style-1" data-spy="scroll" data-target="#spy">
+        <div id="studium">
+            <!-- HIDDEN MEDIA CONTENT -->
+            <div class="media-content media-content-hidden hidden">
+                <div class="player-test">
+                    <div class="all-audios">
+                        <div class="names-table">
+                            <div class="names-row row-one">
+                                <div class="names-col filled audio" num="1">Intro</div>
+                                <div class="names-col"></div>
+                                <div class="names-col filled audio" num="3">Chris</div>
+                                <div class="names-col"></div>
+                            </div>
+                            <div class="bars-row">
+                                <div class="bar bars-col"><span></span></div>
+                                <div class="bar bars-col"><span></span></div>
+                                <div class="bar bars-col"><span></span></div>
+                                <div class="bar bars-col"><span></span></div>
+
+                            </div>
+                            <div class="names-row row-two">
+                                <div class="names-col"></div>
+                                <div class="names-col filled audio" num="2">Christian</div>
+                                 <div class="names-col"></div>
+                                <div class="names-col filled audio" num="4">Jill</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-control">
+
+                    </div>
+                    <div class="persons-list">
+                        <p class="bilder-und-info">Bilder und Infos zu:</p>
+                    </div>
+                    <div class="persons-list-element-content-hidden hidden">
+                        <div class="text">
+                            <p>… hat 2010 seinen Abschluss gemacht. Er lebt und arbeitet in Berlin und Geschäftsführer der Firma onformative. Lorem dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <p><a target="_blank" href="http://www.onformative.com" class="element-content-links">www.onformative.com</a></p>
+                            <p><a target="_blank" href="http://instragram.com/onformative" class="element-content-links">instragram.com/onformative</a></p>
+                            <p><a target="_blank" href="http://facebook.com/onformative" class="element-content-links">facebook.com/onformative</a></p>
+                            <p><a target="_blank" href="http://twitter.com/onformative" class="element-content-links">twitter.com/onformative</a></p>
+                            <p class="mehr-hoeren">Mehr von Cedric hören</p>
+                        </div>
+                        <div class="image">
+                            <img src="./assets/img/img1.jpg" class="persons-list-element-image">
+                            <div class="half half-left"></div>
+                            <div class="half half-right"></div>
+                            <span class="image-untertext">Cedric heute</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
             <div class="themen-wrapper">
                 <h4>Studium</h4>
             </div>
             <div class="personen-wrapper hidden"></div>
         </div>
         <div id="diplom">
-
-            <div class="themen-wrapper">
+            <div class="themen-wrapper-none">
                 <h4>Diplom</h4>
             </div>
             <div class="personen-wrapper hidden"></div>
         </div>
         <div id="uebergang-ins-berufsleben">
-
-            <div class="themen-wrapper">
+            <div class="themen-wrapper-none">
                 <h4>Übergang ins Berufsleben</h4>
             </div>
             <div class="personen-wrapper hidden"></div>
         </div>
         <div id="im-designeralltag">
 
-            <div class="themen-wrapper">
+            <div class="themen-wrapper-none">
                 <h4>Im Designeralltag</h4>
             </div>
             <div class="personen-wrapper hidden"></div>
         </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- ****** HIDDEN ******-->
-<div class="player hidden">
-    <div class="player-bar">
-        <div class="bar bar-full"></div>
-        <div class="bar bar-progress"></div>
-    </div>
-    <div class="player-icons">
-        <i class="icon-play"></i>
-        <i class="player-time">2:25 / 6:30</i>
-        <i class="icon-volume-medium"></i>
-        <i class="volume-bar"><div class="t"><div class="bar"></div><div class="progress"></div></div></i>
     </div>
 </div>
-
-<div class="persons-hover-div hidden">
-    <img alt="" src="assets/img/avatar.png" class="test-image">
-    <span class="normal"> Christian lebt und arbeitet in Hamburg. Er hat 2016 seinen Abschluss gemacht. </span>
-</div>
-
 
 <script src="assets/inc/jquery.min.js"></script>
+<script src="assets/inc/howler.js"></script>
 <script src="assets/inc/bootstrap.min.js"></script>
 <script type='text/javascript' src='//cdn.jsdelivr.net/jquery.marquee/1.4.0/jquery.marquee.min.js'></script>
 <script src="assets/js/main.min.js"></script>

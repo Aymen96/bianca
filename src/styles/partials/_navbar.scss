@@ -2,20 +2,26 @@
   margin-top: 60px;
   font-size: 20px;
   text-align: right;
-  .navbar a:nth-child(2) {
-    margin-bottom: 40px;
-  }
+  background-color: transparent;
+  z-index: 998 !important;
   .navbar {
     padding:0;
+    background-color: transparent;
+
+    a:nth-child(2) {
+      margin-bottom: 40px;
+    }
   }
   nav a {
+    text-decoration: none;
+    z-index: 999 !important;
     cursor: pointer;
     display:block ;
     width:100%;
     color: #000;
     font-size: 20px;
     line-height: 22px;
-    font-family: "Prompt", sans-serif;
+    font-family: $font-family-open-sans;
     &.special {
       height: 60px;
       font-size: 20px;
@@ -25,23 +31,26 @@
     &.active-select {
       text-decoration: underline;
     }
-
     &:not(.special):not(.sort-btn)  {
       font-size: 20px;
       margin-bottom: 12px;
       height:25px;
     }
-
     &.special.active {
       border-top: 1px solid #000;
       border-bottom: 1px solid #000;
+    }
+    &:not(.special):not(.sort-btn):hover {
+      text-decoration: underline;
     }
   }
   .themen-navbar a:nth-of-type(5) {
     height:48px !important;
   }
+  .sort-btn {
+    margin-top: 39px;
+    padding: 0;
+  }
 }
-.sort-btn {
-  margin-top: 39px;
-  padding: 0;
-}
+
+

@@ -2,25 +2,26 @@
   width:100%;
   overflow: hidden !important;
   position: relative;
-  padding:22px 0;
+  padding:10px 0 10px;
   border-bottom: 1px solid #000;
+  &.active {
+    padding:0 5px;
+    background-color: black;
+    .theme-title {
+      color: #fff;
+    }
+  }
 }
-
 .theme-title {
   width:$theme-title-width;
   color: $font-color;
   font-size: $font-size-fragen;
   font-family: $font-family-young-serif;
-  margin: 0;
   line-height: 80px;
+  margin: 0;
+  padding: 12px 0 12px 0;
   cursor: pointer;
-
-
-  &:hover, &.active {
-    color: $primary-color;
-  }
 }
-
 .names {
   font-size: $font-size-all;
   border-bottom: 1px solid #000;
@@ -39,16 +40,7 @@
 /*
  *  STYLE 1 ** VERTICAL SCROLLBAR
  */
-
-
-  #style-1::-webkit-scrollbar
-  {
-    display:none;
-  }
-
-  .content-wrapper {
-    h4 {
-      margin-top: 30px;
-      font-family: "Prompt", sans-serif;
-    }
-  }
+#style-1::-webkit-scrollbar
+{
+  display:none;
+}

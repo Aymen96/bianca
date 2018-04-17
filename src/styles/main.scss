@@ -9,10 +9,18 @@
 @import 'partials/navbar';
 @import 'partials/player';
 
-@import 'partials/header';
 @import 'partials/personen';
 
 @import 'partials/responsive';
 @import 'partials/band';
 @import 'partials/infobtn';
 @import 'partials/marquee';
+@import 'partials/mediacontent';
+@import 'partials/lava';
+
+
+.cw-player-on .theme-div:hover{
+  .marquee {
+    animation:none !important;
+  }
+}

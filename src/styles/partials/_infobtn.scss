@@ -2,10 +2,12 @@
   font-size: 34px;
   font-family: $font-family-young-serif !important;
   position: absolute;
-  top:60px;
-  right:60px;
+  top:30px;
+  right:30px;
   font-weight: 400;
   cursor: pointer;
+  z-index: 100000;
+  padding: 30px;
 }
 
 .hide-info-btn {

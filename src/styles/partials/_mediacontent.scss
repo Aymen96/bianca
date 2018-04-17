@@ -1,0 +1,114 @@
+.media-content {
+  background-color: transparent;
+  width: 100%;
+  transition: max-height 3s;
+  max-height: 0;
+  position:relative;
+  &.enabled {
+    padding: 5px 5px 0;
+    height: auto;
+    max-height:2500px;
+  }
+}
+
+.player-test {
+  .persons-list {
+    .persons-list-el {
+      &:first-of-type {
+        border-top:  1px solid #000;
+      }
+      font-family: $font-family-open-sans;
+      font-size: 20px;
+      line-height: 18px;
+      padding-top: 6px;
+      height: 35px;
+      border-bottom: 1px solid #000;
+      transition: all 0.5s;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+    .element-content {
+      height: 0;
+      width: 100%;
+      background-color: #fff;
+      transition: 1s all;
+      &.opened {
+       height: 500px;
+      }
+    }
+  }
+}
+
+.element-content.opened {
+  padding: 30px 0;
+  .text, .image {
+    display:inline-block;
+    width: 585px;
+    margin:0;
+    padding: 0;
+    vertical-align: top;
+  }
+  .text {
+    margin: 0 22px 0 0;
+  }
+  .text p{
+
+    margin: 0;
+    font-size: 30px;
+    line-height: 32px;
+    font-family: $font-family-open-sans;
+    &:first-of-type {
+      margin-bottom: 40px;
+    }
+  }
+  .image {
+    position: relative;
+    img {
+      height: 440px;
+      z-index: 10;
+    }
+    .image-untertext {
+      display:block;
+      font-family: $font-family-open-sans;
+      font-size: 20px;
+    }
+    .half {
+      width: 50%;
+      height: calc(100% - 50px);
+      position:absolute;
+      top: 0;
+      cursor: pointer;
+      background: transparent;
+      z-index: 80;
+      &.half-left {
+        left: 0;
+        cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAABTCAYAAAAGLP5sAAAACXBIWXMAAAsSAAALEgHS3X78AAACz0lEQVRoBdWbPVrjMBCGZ+jgDOEM0IZ2W/YMSbs1V9g2Na1zBmi3hRbOAGcgpfYRO4mcKLY18vxov46Mi/eZONaLNMYQArQWRLyOSCGEjz5ac7AE+gAAlwCwDSG87GsX2dWOOQGNWSHiXXOwiHgFAOse6D4H4CZuAwKNHV1kxZTf7p0tBH2OP7YWboP1BOhrCOEJvO9ZRIygN1khJYJ2+7/cYAl0mRVS3vug4AWLiD8nQD8BoDv90ByWHkP3WSElgm5CCF+nBVNYAl1lhZRBULCERcTbCdBd/OqHQMEKlpbRdVZI2VFHP7JKL+qwZ9b7KlDQhi0ABfrqJ0FBE3ZETPqJCviWfToQFdjC9f7IVV1gGWLCAgWlzhaLCTeisFwxcYOtERNuRGBrxcQcdo6YcDMLdq6YmMFKiAk3VbBSYqIOKykm3LBgpcVEDVZDTLgpgtUSE3FYTTHhpqSzamIiCqstJtwMwlqIiQislZhwk8FaisksWGsx4eYA6yEmVbBeYsINAoCbmHATO/trBDTmTwugQLCP1L2h/Nif+Hnngrq2GQGOXX9oAfj7B0bAYw/5JoAPjy7y0G12RUoEXpOFueRoUSDNGwNeUIddgLPlloCfsytT3IAzWPgHHP30NSukLCYWEZWchSXgbgL4hjTSHxYS8HtWSFlaAo/CUjqyraEsyX/VMwlLlrWZAL7vT1xopehf8ULglTZw8SYHAXcjyzIQcPRilbC2jwo8AmiVU1mW2RtznuJTteXpJT7Vm8ke4jNrm95afGYfgFiKj8jRkpX4iB3aWYiP6HGotvhoHDSriY84rKb4qAxHaImP2tiJhvioDvRIi4/6qJSk+JgMoUmJj9l4n4T4mA5OzhUf85HUOeLjMuxbKz5uY9Q14uM6oM4VnxZG/4vFxx2WIT7XTbxbUwC8beUNkO+MiM9hQqSpV6zOeMTRKMv/86YdAPwFRvOypwnJF2MAAAAASUVORK5CYII=), auto;
+      }
+      &.half-right {
+        left: 50%;
+        cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAABTCAYAAADk8OUVAAAACXBIWXMAAAsSAAALEgHS3X78AAAC20lEQVRoBc3bIXPbQBAF4Leakoa6sKWhLU2paUNDYxrs31FaHNPSlobGtKWlDQ2N4XbkrHuyT9bpdLe7esi5c2a+uSjZl7FEzIxuiOgSwDtmfsQM8+YE+xnArbzGHNHN4UUXK7mVtVmlEezyBHvIDRF9iFYd0xDRAsD1GcJbAOs5oRtmfgbwLdoJmRV6f0kw8x8Am2g3pEXfEdFFtGOc/7908hdhCL2Qk3ZFN90vBP09elfIe290c7rAzA8AttE7Q1r0XbRqlAgs6PsE+pKIVtGqQXrBI9FXHuizYEl7PT9FqyEt+iZaVcwgmJlfAHxNoJeWI3wQjPFos96RBCOg22m4izZDTNCjwHhFP8tJD6HVy9JoMF7RfxNo9d6RBUZAu5WlbDCcy9IkMBzL0mQwnMpSERgOZakYDOOyVAUMw7JUDSxRL0tVwRZlqfYJq5el6mAolyUVMBTLkhoYSmVJFdymdllSB6NyWTIBo2JZMgOjUlkyBaNCWTIHo7AsuYBRUJbcwJLssuQKnlKWvE84uyy5gxHQD9HGcfaXxizAMpaHiv1Ofgr+YMGuZTz3ZY+VTuILHoFtc3/AwhMs43eVwG6Y+Vd3wQUs2LWM4XPZ9H04bw4eif3Zh4XTCa8S2C0z/4hWJaZg6QYfo42QrXSMszEDC/Yq2gj5ncLCCkxE1wlsO5aTWFiApQN8iTZCnmQwvEQ7PVEF99yWU4SFJpiIPiWwO5lio7HQAsvIjf5b6OSoH+SkOji3zLiCp5SZ3FQDTy0zLuCSMpObYnBpmTEHl5aZ3BSBa5QZM3CtMpObSeCaZUYdXLvM5CYLrFFm1MBaZSY3o8CaZaY6WLvM5GYQbFFmqoGtykxuesGWZaYYbF1mchOBrctMEdijzOSm+6SMS5mZBPYsM7k5PCmzHPg+9X6QkyZx58issOg8KdN354hJmcnN0QOAMorbT9IvLPtBTvqeWGyxizliAeAflkmo+pjcHiQAAAAASUVORK5CYII=), auto;
+      }
+    }
+  }
+}
+.element-content-links {
+   color: black !important;
+   text-decoration: none;
+   font-family: $font-family-open-sans;
+  &:hover {
+    text-decoration: none;
+  }
+ }
+
+.mehr-hoeren {
+  margin-top: 20px !important;
+  cursor: pointer;
+}
+
+.bilder-und-info {
+  font-family: $font-family-open-sans;
+  font-size: 20px;
+}
