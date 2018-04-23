@@ -3,11 +3,29 @@ $main-width: 1210px;
 .theme-div .marquee {
   display:block;
   position:relative;
-  width:1900px;
-  overflow: hidden;
-  .mq1 {
+  overflow: visible;
+  .mq {
     display:inline-block;
-    width:$main-width;
+    width:2000px;
+
+    &:nth-of-type(1) {
+      display: inline-block;
+    }
+    &:nth-of-type(2) {
+      position:absolute;
+      left: 1900px;
+      top:0;
+      display: inline-block;
+    }
+    &:nth-of-type(3) {
+      position:absolute;
+      left: 3800px;
+      top:0;
+      display: inline-block;
+    }
+  }
+  .mq {
+    overflow: visible;
   }
   .mq2 {
     display:inline-block;
@@ -15,20 +33,26 @@ $main-width: 1210px;
     left: $main-width;
     overflow: visible;
     text-align: left;
+    top:0;
     & .one-image-wrapper {
       overflow: visible;
       display:inline-block;
       position: relative;
+
       img {
-        min-width: 200px;
+        max-width: 200px;
+        height: auto;
         z-index: 10000;
         margin-top: -10px;
         margin-right: 15px;
+        overflow: visible;
+
       }
       .theme-image-text {
         overflow: visible;
         position:absolute;
-        right: 50px;
+        width:200px;
+        text-align: center;
         bottom: -35px;
         z-index:65466;
         font-family: $font-family-open-sans;
@@ -47,7 +71,20 @@ $main-width: 1210px;
   position:relative;
   width:$main-width;
   &:not(.active):hover .marquee {
-    animation: scroll_one_time 4s linear infinite;
+    .mq {
+      &:nth-of-type(1) {
+        animation: marquee0 15s linear 1;
+        -webkit-animation-fill-mode:forwards;
+        animation-fill-mode:forwards;
+      }
+      &:nth-of-type(2) {
+        animation: marquee 15s linear infinite;
+      }
+      &:nth-of-type(3) {
+        animation: marquee2 15s linear infinite;
+        animation-delay: 7.5s;
+
+      } }
   }
 }
 
@@ -62,17 +99,26 @@ $main-width: 1210px;
 }
 @keyframes marquee {
   from {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
   }
 }
 @keyframes marquee2 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(-300%);
+  }
+}
+@keyframes marquee0 {
   from {
     transform: translateX(0%);
   }
   to {
     transform: translateX(-200%);
+    display:none;
   }
 }

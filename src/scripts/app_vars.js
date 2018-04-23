@@ -1134,10 +1134,23 @@ var player;
 
 var current_volume = 0.75;
 var volume_width = 100;
+var inLandingPage = true;
 
 // Functions
 
 function showNavlinks() {
+    $(".personen-navbar a.navlink:not(.special, .sort-btn)").remove();
+    var str = "";
+    for(var i = 0; i < persons.length; i++) {
+        str += '<a class="navlink ' +
+            '" href="#' + persons[i].name.toLowerCase() + '">' +
+            persons[i].name +
+            ', ' +
+            persons[i].year +
+            '</a>';
+    }
+    $(".personen-navbar .zu-personen").after(str);
+    $(".personen-navbar a.navlink:not(.special, .sort-btn)").first().addClass("active-select");
     $(".personen-navbar a:not(.special, .sort-btn)").click(function (){
         $(".personen-navbar a:not(.special, .sort-btn)").removeClass("active-select");
         $(this).addClass("active-select");
@@ -1206,8 +1219,7 @@ function enableQuestion(themediv) {
         '<div class="btn volumeBtn" id="volumeBtn"></div>\n' +
         '<span class="track" id="track"></span>\n' +
         '<div id="volume" class="fadeout">\n' +
-        '    <div id="barFull" class="bar-audio"></div>\n' +
-        '    <div id="barEmpty" class="bar-audio"></div>\n' +
+        '    <input type="range" id="range" value="0">' +
         '  </div>' +
         '</div>');
     $(".persons-list-el").click(function() {
@@ -1309,7 +1321,7 @@ function setPlayingAudioWidth() {
 }
 
 function bindPlayer() {
-    var elms = ['track', 'timer', 'duration', 'progress', 'playBtn', 'pauseBtn','volumeBtn', 'volume', 'barEmpty', 'barFull'];
+    var elms = ['track', 'timer', 'duration', 'progress', 'playBtn', 'pauseBtn','volumeBtn', 'volume', 'range'];
     elms.forEach(function(elm) {
         window[elm] = document.getElementById(elm);
     });
@@ -1383,28 +1395,7 @@ function bindPlayer() {
     });
 
     // Setup the event listeners to enable dragging of volume slider.
-    player.barEmpty.addEventListener('click', function(event) {
-        var per = event.layerX / parseFloat(player.barEmpty.scrollWidth);
-        player.volume(per);
-    });
-    player.volumi.addEventListener('mouseup', function() {
-        window.sliderDown = false;
-    });
-    player.volumi.addEventListener('touchend', function() {
-        window.sliderDown = false;
-    });
-
-    var move = function(event) {
-        if (window.sliderDown) {
-            var x = event.clientX || event.touches[0].clientX;
-            var startX = volume_width * 0.05;
-            var layerX = x - startX;
-            var per = Math.min(1, Math.max(0, layerX / parseFloat(player.barEmpty.scrollWidth)));
-            player.volume(per);
-            console.log(current_volume);
-        }
-    };
-
-    player.volumi.addEventListener('mousemove', move);
-    player.volumi.addEventListener('touchmove', move);
+    player.range.onchange = function() {
+        player.volume(player.range.value / 100);
+    }
 }

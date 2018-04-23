@@ -1,0 +1,52 @@
+.landingpage {
+  height: 100%;
+  width: 100%;
+  z-index: 99999999999;
+  position:fixed;
+  top: 0;
+  left:0;
+  background-color: #fff;
+  //display:none;
+  .headline-wrapper {
+    display:inline-block;
+    color: #000;
+    width: 100%;
+    text-align:center;
+    position:absolute;
+    top: 50%;
+    p {
+      display:inline-block;
+      font-size: 50px;
+      line-height: 60px;
+      font-family: $font-family-young-serif;
+      text-align: left;
+      max-width: 67.5%;
+    }
+    h1 {
+      display:inline-block;
+      font-size: 190px;
+      line-height: 185px;
+      font-family: $font-family-young-serif;
+      padding-bottom: 10px;
+      width: 75%;
+      text-align: left;
+    }
+  }
+  .choice {
+    position: absolute;
+    bottom: 50px;
+    font-size: 50px;
+    line-height: 60px;
+    font-family: $font-family-open-sans;
+    display: none;
+    cursor: pointer
+  }
+  .first-choice {
+    left: 50px;
+  }
+
+  .second-choice {
+    right: 50px;
+  }
+
+}

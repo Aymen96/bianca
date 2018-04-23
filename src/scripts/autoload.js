@@ -10,11 +10,12 @@ $(document).ready(function() {
         $(".themen-wrapper").append(
                 '<div class="theme-div" id="theme' + i + '">' +
                 '<div class="marquee">' +
-                '<div class="mq1">' +
+                '<div class="mq"><div class="mq1">' +
                 // THEME_TITLE
                 '<h2 class="theme-title">' +
                 frage["frage"] +
                 '</h2>' +
+
                 '</div>'  +
 
                 '<div class="mq2">' +
@@ -32,6 +33,56 @@ $(document).ready(function() {
                 '</div>' +
                 '</div>' +
                 '</div>' +
+            '' +
+            '<div class="mq"><div class="mq1">' +
+            // THEME_TITLE
+            '<h2 class="theme-title">' +
+            frage["frage"] +
+            '</h2>' +
+
+            '</div>'  +
+
+            '<div class="mq2">' +
+            '<div class="one-image-wrapper">' +
+            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
+            '<div class="theme-image-text">Bea, 2017</div>' +
+            '</div>' +
+            '<div class="one-image-wrapper">' +
+            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
+            '<div class="theme-image-text">Bea, 2017</div>' +
+            '</div>' +
+            '<div class="one-image-wrapper">' +
+            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
+            '<div class="theme-image-text">Bea, 2017</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '' +
+            '<div class="mq"><div class="mq1">' +
+            // THEME_TITLE
+            '<h2 class="theme-title">' +
+            frage["frage"] +
+            '</h2>' +
+
+            '</div>'  +
+
+            '<div class="mq2">' +
+            '<div class="one-image-wrapper">' +
+            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
+            '<div class="theme-image-text">Bea, 2017</div>' +
+            '</div>' +
+            '<div class="one-image-wrapper">' +
+            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
+            '<div class="theme-image-text">Bea, 2017</div>' +
+            '</div>' +
+            '<div class="one-image-wrapper">' +
+            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
+            '<div class="theme-image-text">Bea, 2017</div>' +
+            '</div>' +
+            '</div>' +
+            '</div></div>' +
+            '' +
+            '</div>' +
                 '</div><div class="media-content"></div>'
         );
     }

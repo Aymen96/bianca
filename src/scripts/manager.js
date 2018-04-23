@@ -75,9 +75,10 @@ $(document).ready(function() {
     /**
      * @CLICK WHEN THEMEN DIV IS CLICKED
      **/
-    $(".theme-div").click(function() {
-
+    $(".theme-div").click(function(e) {
+        e.preventDefault();
         $(".theme-div.active:not(.player-on, .player-chrinked) ~ .media-content:not(.media-content-hidden)").removeClass("enabled").empty();
+        // Scroll to question
         var id = $(this).attr('id');
         setTimeout(function() {
             window.location.href= "./#" + id;
@@ -131,6 +132,7 @@ $(document).ready(function() {
         $(".theme-div:not(.player-chrinked)").removeClass("active");
         $(this).addClass("active");
         enableQuestion($(this));
+        return false;
     });
 
 });

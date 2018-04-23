@@ -33,7 +33,7 @@
     .element-content {
       height: 0;
       width: 100%;
-      background-color: #fff;
+      background-color: transparent;
       transition: 1s all;
       &.opened {
        height: 500px;
@@ -44,6 +44,7 @@
 
 .element-content.opened {
   padding: 30px 0;
+
   .text, .image {
     display:inline-block;
     width: 585px;

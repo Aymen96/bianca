@@ -14,8 +14,7 @@ var Player = function(playlist , win) {
     this.volumeBtn = win["volumeBtn"];
     this.progress = win["progress"];
     this.volumi = win["volume"];
-    this.barEmpty = win["barEmpty"];
-    this.barFull = win["barFull"];
+    this.range = win["range"];
     this.volume(current_volume);
 
 };
@@ -148,7 +147,7 @@ Player.prototype = {
 
         // Update the display on the slider.
         var barWidth = (val * 90) / 100;
-        self.barFull.style.width = (barWidth * 100) + 'px';
+        self.range.value = val * 100;
     },
 
     /**
