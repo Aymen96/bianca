@@ -1135,6 +1135,9 @@ var player;
 var current_volume = 0.75;
 var volume_width = 100;
 var inLandingPage = true;
+var imgIndex = 0;
+// JSON DATA
+var data;
 
 // Functions
 
@@ -1207,21 +1210,25 @@ function showPersons() {
 }
 
 function enableQuestion(themediv) {
-    themediv.next(".media-content").addClass("enabled").append($(".media-content-hidden").html())
-        .find(".all-audios").append('<div class="player-wrapper">\n' +
+    var media = themediv.next(".media-content");
+    media.addClass("enabled").append($(".media-content-hidden").html())
+        .find(".all-audios").append('<div class="player-wrapper">' +
         '<div class="progress-wrapper"><div class="progress" id="progress"></div></div>                         ' +
-        '   <div class="btn playBtn" id="playBtn"></div>\n' +
-        '<div class="btn pauseBtn" id="pauseBtn"></div>\n' +
+        '   <div class="btn playBtn" id="playBtn"></div>' +
+        '<div class="btn pauseBtn" id="pauseBtn"></div>' +
         '<div class="time-manager">' +
         '<span class="timer" id="timer">0:00</span>' +
         '<span>/</span> ' +
-        '<span class="duration" id="duration">0:00</span></div>\n' +
-        '<div class="btn volumeBtn" id="volumeBtn"></div>\n' +
-        '<span class="track" id="track"></span>\n' +
-        '<div id="volume" class="fadeout">\n' +
+        '<span class="duration" id="duration">0:00</span></div>' +
+        '<div class="btn volumeBtn" id="volumeBtn"></div>' +
+        '<span class="track" id="track"></span>' +
+        '<div id="volume" class="fadeout">' +
         '    <input type="range" id="range" value="0">' +
         '  </div>' +
         '</div>');
+    fill_persons_table(media ,themediv.attr("theme"));
+    fill_persons_list(media ,themediv.attr("theme"));
+    // TOGGLE content on click
     $(".persons-list-el").click(function() {
         $(".element-content.opened").empty();
         if($(this).next(".element-content").hasClass("opened")) {
@@ -1272,18 +1279,15 @@ function enableQuestion(themediv) {
             }, 500)
         });
     });
+
+
     if(!playerChrinked) {
         bindPlayer();
     } else {
         themediv.next(".media-content.enabled:not(.hidden)").find(".playBtn").click(function() {
-            player.pause();
-            $(".theme-div.player-chrinked").removeClass("player-chrinked").next(".media-content").removeClass("enabled").empty();
-            playerChrinked = false;
-            $(".media-content.enabled").empty().removeClass("enabled");
-            enableQuestion(themediv);
-            bindPlayer();
-            player.play();
-            playerOn = true;
+            reinit();
+            themediv.trigger("click");
+            play();
         });
     }
 
@@ -1291,7 +1295,7 @@ function enableQuestion(themediv) {
 function disableQuestion(themediv) {
     themediv.removeAttr('id').next(".media-content").removeClass("enabled").empty();
 }
-var imgIndex = 0;
+
 function fixWidth(currentIndex) {
     var width = 0;
     if(currentIndex != 2) {
@@ -1302,13 +1306,12 @@ function fixWidth(currentIndex) {
     $(".half").width(width/2);
     $(".half-right").css("left", width/2);
 }
-
 function calculateWidth(index) {
     var widthFull = 0;
     $(".media-content.enabled:not(.hidden) .audio").each(function() {
-        widthFull += $(this).width() * 0.975;
+        widthFull += $(this).width() * 0.95;
     });
-    var widthToPlay = $(".media-content.enabled:not(.hidden) .audio[num='" + index + "']").width() * 96.5 / widthFull;
+    var widthToPlay = $(".media-content.enabled:not(.hidden) .audio[num='" + index + "']").width() * 90 / widthFull;
     var prevAll = 0;
     for(var i = 1; i < index; i++) {
         prevAll += $(".media-content.enabled:not(.hidden) .audio[num='" + i + "']").width();
@@ -1345,18 +1348,8 @@ function bindPlayer() {
     ], window);
 // Bind our player controls.
     $("#playBtn").click(function() {
-        playerOn = true;
-        $(".content-wrapper").removeClass("cw-player-on");
-        $(".theme-div").removeClass("player-on");
-        $(".content-wrapper").addClass("cw-player-on");
-        $(".theme-div.active").addClass("player-on");
-        player.play();
-        setPlayingAudioWidth();
-        if(anim_stopped) {
-            anim_stopped = false;
-            $("#bubble").addClass("clicked");
-            run();
-        }
+        play();
+        $("canvas").fadeIn(2000);
     });
 
     $("#pauseBtn").click(function() {
@@ -1379,18 +1372,11 @@ function bindPlayer() {
         mute = !mute;
     });
     $(".media-content:not(.hidden) .audio").click(function() {
-        playerOn = true;
-        $(".content-wrapper").addClass("cw-player-on");
-        $(".theme-div.active").addClass("player-on");
-        if(anim_stopped) {
-            anim_stopped = false;
-            $("#bubble").addClass("clicked");
-            run();
-        }
+        player.pause();
+        play();
         var num = $(this).attr('num');
         playingAudio["index"] = num;
         setPlayingAudioWidth();
-        console.log(playingAudio);
         player.skipTo(num-1);
     });
 
@@ -1398,4 +1384,117 @@ function bindPlayer() {
     player.range.onchange = function() {
         player.volume(player.range.value / 100);
     }
+}
+
+
+// Load JSON Files
+function loadJSON(callback) {
+
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', './assets/data/data.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+        }
+    };
+    xobj.send(null);
+}
+function init() {
+    loadJSON(function(response) {
+        // Parse JSON string into object
+        data = JSON.parse(response);
+    });
+}
+init();
+
+// ******************************************** FILL WITH CONTENT ********************************************
+
+/*
+    Fill questions in Themen-Katalog
+ */
+function fill_questions() {
+    $.each(data, function(index, question) {
+        // Traverse JSON
+        var int_index = parseInt(index.replace("q",""));
+        var b = parseInt(question["category"]) -1;
+        var category_el = $(".category[category='" + b  + "']");
+
+        // Collect HTML
+        var mq1 = '<div class="mq1">' +
+            // THEME_TITLE
+            '<h2 class="theme-title">' +
+            question["question"] +
+            '</h2>' +
+            '</div>';
+        var mq2 = '<div class="mq2">';
+            question["hover_images"].forEach(function(value) {
+                mq2 += '<div class="one-image-wrapper">' +
+                    '<img src="./assets/img/img-hover/' + value["source"] + '" class="theme-image">' +
+                    '<div class="theme-image-text">' + value["text"] + '</div>' +
+                    '</div>';
+            });
+            mq2 += '</div>' ;
+            // THREE TIMES
+            var mq = '<div class="mq">' +
+                mq1 + mq2 +
+                '</div>' +
+                '<div class="mq">' +
+                mq1 + mq2 +
+                '</div>' +
+                '<div class="mq">' +
+                mq1 + mq2 +
+                '</div>' ;
+        var html =
+            '<div class="theme-div" id="theme' + int_index + '" theme="' + int_index + '">' +
+            '<div class="marquee">' +
+            mq +
+            '</div>' +
+            '</div>' +
+            '<div class="media-content"></div>';
+
+        // Append in the right category
+        category_el.find(".themen-wrapper").append(html);
+    });
+}
+/*
+    Fill persons list in media content
+ */
+function fill_persons_list(media, theme) {
+    $.each(data["q" + theme]["persons"], function(index, value) {
+        if(value["name"] !== "Intro") {
+            media.find(".persons-list").append('<div class="persons-list-el" person="' + index + '">' + value["name"] + '</div><div class="element-content"></div>');
+        }
+    });
+}
+
+function fill_persons_table(media, theme) {
+    //Collect HTML
+    var row_one = '<div class="names-row row-one">';
+    var bars_row = '<div class="bars-row">';
+    var row_two = '<div class="names-row row-two">';
+    var pair = true;
+    var i = 1;
+    $.each(data["q" + theme]["persons"], function(index, value) {
+        if(pair){
+            row_one += '<div class="names-col filled audio" num="' + i + '">' + value["name"] + '</div>';
+            row_two += '<div class="names-col"></div>';
+        } else {
+            row_one += '<div class="names-col"></div>';
+            row_two += '<div class="names-col filled audio" num="' + i + '">' + value["name"] + '</div>';
+        }
+        pair = !pair;
+        i++;
+        bars_row += '<div class="bar bars-col"><span></span></div>';
+    });
+    row_one += '</div>';
+    row_two += '</div>';
+    bars_row += '</div>';
+    var html = row_one +
+        bars_row +
+        row_two;
+
+    // Append HTML
+    media.find(".all-audios .names-table").append(html);
 }

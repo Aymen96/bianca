@@ -1,104 +1,110 @@
 $(document).ready(function() {
-    showNavlinks();
-    showPersons();
-
-    /**
-     * QUESTIONS FILL
-     **/
-    for(var i = 1; i <= Object.keys(fragen).length ; i++) {
-        frage =fragen["f" + i];
-        $(".themen-wrapper").append(
-                '<div class="theme-div" id="theme' + i + '">' +
-                '<div class="marquee">' +
-                '<div class="mq"><div class="mq1">' +
-                // THEME_TITLE
-                '<h2 class="theme-title">' +
-                frage["frage"] +
-                '</h2>' +
-
-                '</div>'  +
-
-                '<div class="mq2">' +
-                '<div class="one-image-wrapper">' +
-                '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
-                '<div class="theme-image-text">Bea, 2017</div>' +
-                '</div>' +
-                '<div class="one-image-wrapper">' +
-                '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
-                '<div class="theme-image-text">Bea, 2017</div>' +
-                '</div>' +
-                '<div class="one-image-wrapper">' +
-                '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
-                '<div class="theme-image-text">Bea, 2017</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-            '' +
-            '<div class="mq"><div class="mq1">' +
-            // THEME_TITLE
-            '<h2 class="theme-title">' +
-            frage["frage"] +
-            '</h2>' +
-
-            '</div>'  +
-
-            '<div class="mq2">' +
-            '<div class="one-image-wrapper">' +
-            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
-            '<div class="theme-image-text">Bea, 2017</div>' +
-            '</div>' +
-            '<div class="one-image-wrapper">' +
-            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
-            '<div class="theme-image-text">Bea, 2017</div>' +
-            '</div>' +
-            '<div class="one-image-wrapper">' +
-            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
-            '<div class="theme-image-text">Bea, 2017</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '' +
-            '<div class="mq"><div class="mq1">' +
-            // THEME_TITLE
-            '<h2 class="theme-title">' +
-            frage["frage"] +
-            '</h2>' +
-
-            '</div>'  +
-
-            '<div class="mq2">' +
-            '<div class="one-image-wrapper">' +
-            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
-            '<div class="theme-image-text">Bea, 2017</div>' +
-            '</div>' +
-            '<div class="one-image-wrapper">' +
-            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
-            '<div class="theme-image-text">Bea, 2017</div>' +
-            '</div>' +
-            '<div class="one-image-wrapper">' +
-            '<img src="./assets/img/sliders/01_bea.jpg" class="theme-image">' +
-            '<div class="theme-image-text">Bea, 2017</div>' +
-            '</div>' +
-            '</div>' +
-            '</div></div>' +
-            '' +
-            '</div>' +
-                '</div><div class="media-content"></div>'
-        );
-    }
-    /**
-     * PERSON ELEMENTS FILL IN MEDIA CONTENT
-     **/
-    persons.forEach(function (person) {
-        $(".player-test .persons-list").append('<div class="persons-list-el">' + person.name + '</div><div class="element-content"></div>');
-    });
-
-    /**
-     * FIX IMAGES HEIGHT IN HOVER EFFECT BOX
+    /*
+     * TIMEOUT TO LOAD JSON FILES !!
      */
-    $(".theme-div").each(function() {
-        var height_theme_div = $(this).height() - 10;
-        $(this).find(".marquee .mq2 img").css("height", height_theme_div + "px");
+    setTimeout(function() {
+        /**
+         * QUESTIONS FILL
+         **/
+        fill_questions();
 
-    });
+        /**
+         * FIX IMAGES HEIGHT IN HOVER EFFECT BOX
+         */
+        $(".theme-div").each(function () {
+            var height_theme_div = $(this).height() - 10;
+            $(this).find(".marquee .mq2 img").css("height", height_theme_div + "px");
+
+        });
+
+        /**
+         * @CLICK WHEN THEMEN DIV IS CLICKED
+         **/
+        $(".theme-div").click(function(e) {
+            e.preventDefault();
+            var self = $(this);
+            var playing = $(".theme-div.player-on");
+            // Close other media content elements
+            $(".theme-div.active:not(.player-on, .player-chrinked) ~ .media-content:not(.media-content-hidden)").removeClass("enabled").empty();
+            // Scroll to question
+            var id = $(this).attr('id');
+            setTimeout(function() {
+                window.location.href= "./#" + id;
+            }, 500);
+
+            // Question is clicked and shrinked
+            if(playerChrinked && self.hasClass("player-chrinked")) {
+                $(".theme-div:not(.player-chrinked)").removeClass("active");
+                unshrink_player(self);
+                return;
+            } else
+            // Question is clicked and playing
+            if(playerOn && self.hasClass("player-on")) {
+                shrink_player(self);
+                return;
+            } else
+            // Question is clicked while other is playing
+            if(playerOn && !self.hasClass("player-on")) {
+                if(!playerChrinked) {shrink_player(playing);}
+                if(self.hasClass("active")) {
+                    disable_theme(self);
+                    return;
+                }
+            } else
+            // Question should close
+            if(self.hasClass("active")) {
+                disable_theme(self);
+                return;
+            }
+            /** COLORATION
+             if($(this).hasClass("player-chrinked") && playerChrinked && !playerOn) {
+            $(this).removeClass("player-chrinked");
+            playerChrinked = false;
+            $(this).next(".media-content").empty().removeClass("enabled");
+            return;
+        }
+             if($(this).hasClass("player-chrinked") && playerChrinked) {
+            console.log("#1");
+            $(".media-content.enabled:not(.hidden) .names-table").fadeIn();
+            $(".media-content.enabled:not(.hidden) .persons-list").fadeIn();
+            $(this).removeClass("player-chrinked").next(".media-content.enabled").find(".player-wrapper").removeClass("chrinked");
+            $(".player-on ~ .media-content.enabled:not(.hidden)").find(".progress").fadeIn();
+            playerChrinked = false;
+
+            $(".theme-div:not(.player-chrinked)").removeClass("active");
+            $(this).addClass("active");
+
+            return;
+        }
+             if(playerOn && $(this).hasClass("player-on") && !$(this).hasClass("player-chrinked")) {
+            console.log("#2");
+            $(".media-content.enabled:not(.hidden) .names-table").fadeOut();
+            $(".media-content.enabled:not(.hidden) .persons-list").fadeOut();
+            $(this).addClass("player-chrinked").next(".media-content.enabled").find(".player-wrapper").addClass("chrinked");
+            $(".player-on ~ .media-content.enabled:not(.hidden)").find(".progress").fadeOut();
+            playerChrinked = true;
+            return;
+        }
+             if($(this).hasClass("active")) {
+            console.log("#3");
+            $(this).removeClass("active");
+            disableQuestion($(this));
+            return;
+        }
+             if(playerOn && !$(this).hasClass("active") && !$(this).hasClass("player-chrinked")) {
+            console.log("#4special");
+            $(".media-content.enabled:not(.hidden) .names-table").fadeOut();
+            $(".media-content.enabled:not(.hidden) .persons-list").fadeOut();
+            $(".player-on").addClass("player-chrinked").removeClass("active").next(".media-content.enabled").find(".player-wrapper").addClass("chrinked");
+            $(".player-on ~ .media-content.enabled:not(.hidden)").find(".progress").fadeOut();
+            playerChrinked = true;
+        }
+             **/
+            console.log("#5");
+            $(".theme-div:not(.player-chrinked)").removeClass("active");
+            $(this).addClass("active");
+            enableQuestion($(this));
+            return false;
+        });
+    }, 1000);
 });

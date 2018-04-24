@@ -1,7 +1,7 @@
 .navbar-wrapper {
   margin-top: 60px;
   font-size: 20px;
-  text-align: right;
+  text-align: left;
   background-color: transparent;
   z-index: 998 !important;
   .navbar {
@@ -17,6 +17,7 @@
     z-index: 999 !important;
     cursor: pointer;
     display:block ;
+    padding-left:60px;
     width:100%;
     color: #000;
     font-size: 20px;
@@ -27,13 +28,17 @@
       font-size: 20px;
       line-height: 22px;
       padding: 6px 0;
+      padding-left: 60px;
+      width: 351px;
     }
     &.active-select {
-      text-decoration: underline;
+      //text-decoration: underline;
+    transition:margin-left .25s;
+      margin-left: -30px;
     }
     &:not(.special):not(.sort-btn)  {
       font-size: 20px;
-      margin-bottom: 12px;
+      margin-bottom: 13px;
       height:25px;
     }
     &.special.active {
@@ -41,15 +46,12 @@
       border-bottom: 1px solid #000;
     }
     &:not(.special):not(.sort-btn):hover {
-      text-decoration: underline;
+      //HOVER
     }
   }
-  .themen-navbar a:nth-of-type(5) {
-    height:48px !important;
-  }
   .sort-btn {
-    margin-top: 39px;
     padding: 0;
+    padding-left: 60px;
   }
 }
 

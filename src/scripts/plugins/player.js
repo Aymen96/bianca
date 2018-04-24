@@ -148,6 +148,12 @@ Player.prototype = {
         // Update the display on the slider.
         var barWidth = (val * 90) / 100;
         self.range.value = val * 100;
+
+        if(val === 0) {
+            $("#volumeBtn").addClass("mute");
+        } else if($("#volumeBtn").hasClass("mute")){
+            $("#volumeBtn").removeClass("mute");
+        }
     },
 
     /**
